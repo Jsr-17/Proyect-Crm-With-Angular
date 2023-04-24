@@ -1,0 +1,37 @@
+
+      <div class="hero">
+        <div class="container">
+          <table class="table">
+            <tr>
+              <td id="new" class="add" routerLink="/new">Nuevo</td>
+
+              <td>Nombre</td>
+          
+              <td>Descripción</td>
+
+              <td>Fecha</td>
+
+              <td>Estado</td>
+          
+              
+              <td></td>
+
+            </tr>
+
+            <tr *ngFor="let report of reports">
+              <td id="open" class="add" routerLink="/file/{{report.id}}" >Abrir</td>
+
+              <td>{{report.name}}</td>
+          
+              <td>{{report.description_short}}</td>
+
+              <td>{{report.date}}</td>
+
+              <td>{{report.status}}</td>
+          
+
+              <td class="add" (click)="eliminarReporte(report.id)">Eliminar</td>
+            </tr>
+          </table>
+        </div>
+      </div>

@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="enviarReporte()">
+<div class="hero">
+    <div class="contenedor">
+      <div class="parent">
+        <div class="div1 cajas">
+          <label >
+            Nombre:
+            <span *ngIf="submit && form.controls['name'].invalid" class="error">Es un campo obligatorio</span>
+          </label>
+         <input type="text" formControlName="name"> 
+        </div>
+        <div class="div2 cajas">
+          Fecha: 
+          <input type="date" formcontrolName="date" [value]="today" disabled> 
+        </div>
+      
+        <div class="div3 cajas">
+          <label> Estado:
+            <span *ngIf="submit && form.controls['status'].invalid" class="error" >Es un campo obligatorio</span>
+          </label> &nbsp;&nbsp;<br>
+          En revisión &nbsp;<input type="radio" name="status" value="En revisión" formControlName="status">&nbsp;&nbsp;&nbsp;
+          Finalizado&nbsp; <input type="radio" name="status" value="Finalizado" formControlName="status"> </div>
+        <div class="div4 cajas">
+          <label for="DescripcionBreve">
+            Descripción Breve: 
+          <span *ngIf="form.controls['description_short'].invalid" class="error">No puede insertar mas de 80 carácteres</span>
+        </label>
+          <textarea id="descripcionBreve" name="DescripcionBreve" cols="75" rows="10" formControlName="description_short">
+          </textarea></div>
+        <div class="div5 cajas">
+          Descripción: <br>
+          <label for="Descripcion"></label>
+          <textarea id="descripcion " name="Descripcion " cols="175" rows="10" formControlName="description">
+          </textarea></div>
+          
+            </div>
+            <button  type="submit">Registrar petición</button>
+            <button routerLink="/index">Volver</button>
+    </div>
+
+</div>
+</form>

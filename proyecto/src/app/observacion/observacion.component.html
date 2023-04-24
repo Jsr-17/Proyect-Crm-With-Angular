@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="enviarObservacion()">
+      <div class="hero">
+        <div class="contenedor">
+            <div class="observaciones">              
+              <div class="div6 cajas">
+                Descripción: <br>
+                <label for="Descripcion"></label>
+                <textarea id="descripcion " name="Descripcion " formControlName="description" cols="175" rows="10">
+                </textarea></div>
+            </div>
+            
+            <button  type="submit">Registrar petición</button>
+            <button routerLink="/file" >Volver</button>
+          </div>          
+    </div>
+
+  </form>

@@ -1,0 +1,25 @@
+
+      <div class="hero">
+        <div class="caja">
+            <div class="child">
+                <div class="session">
+                    <div class="datos">
+                      <form [formGroup]="form" (ngSubmit)="enviarReporte()" >
+
+                    <p class="sup">Inicie Sesión:</p>
+                      <br><br>
+                    <p>Usuario:<input type="text" id="user" class="txt" formControlName="name"></p>
+<br>
+                    <p>Contraseña: <input type="password" id="password" class="txt" formControlName="password"></p> 
+<br>
+                    <span *ngIf="submit && form.controls['name'].invalid" class="error">El nombre es un campo obligatorio</span>
+<br>
+                    <span *ngIf="submit && form.controls['password'].invalid" class="error">La contraseña es  un campo obligatorio</span>
+<br>
+                    <button class="bton" type="submit">Enviar</button><a style="margin-left:5px;" href="#">He olvidado mi contraseña</a>
+                  </form>  
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>

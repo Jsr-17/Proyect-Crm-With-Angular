@@ -1,0 +1,40 @@
+
+
+    <form [formGroup]="form" (ngSubmit)="getReporte()">
+      <div class="hero">
+        <div class="contenedor">
+          <div class="parent">
+            <div class="div1 cajas">
+              <label >
+                Nombre:
+              </label>
+             <input type="text" formControlName="name" > 
+            </div>
+            <div class="div2 cajas">
+              Fecha: 
+              <input type="date" formControlName="date" > 
+            </div>
+            <div class="div3 cajas">
+              <label> Estado:
+              </label> &nbsp;&nbsp;<br>
+              En revisión &nbsp;<input type="radio" name="status" value="En revisión" formControlName="status" >&nbsp;&nbsp;&nbsp;
+              Finalizado&nbsp; <input type="radio" name="status" value="Finalizado" formControlName="status" > </div>
+            <div class="div5 cajas">
+              Descripción: <br>
+              <label for="Descripcion"></label>
+              <textarea id="description " name="Descripcion " cols="175" rows="10" formControlName="description" >
+              </textarea></div>
+
+              <div *ngFor="let dato of datos " class="div6 cajas">
+                <div>
+                <textarea  cols="175" rows="10"  value="{{dato.descripcion}}" disabled></textarea>
+                <input type="date" name="" id="" value="{{dato.fecha}}" disabled>
+                </div>
+              </div>
+                </div>
+                <button  routerLink="/modify/{{id}}">Modificar</button>
+                <button routerLink="/observation/{{id}}">Nueva observación</button>
+                <button routerLink="/index">Volver</button>
+        </div>
+    </div>
+</form> 
